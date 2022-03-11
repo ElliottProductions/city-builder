@@ -114,6 +114,11 @@ cityButton.addEventListener('click', () => {
 
 });
 
+function logSubmit(event) {
+    sloganontainer.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+    event.preventDefault();
+}
+
 
 
 function displaySlogans(){
