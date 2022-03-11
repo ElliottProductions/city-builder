@@ -68,6 +68,7 @@ header {
     background-color: var(--color3);
     height: var(--header-height);
     
+    
   
 }
 
@@ -86,6 +87,7 @@ h2 {
 
 header img {
     height: var(--header-height);
+    
 }
 
 p {
@@ -110,9 +112,10 @@ footer {
 }
 
 .column {
-    /*margin: 1ch;
+    margin: .25in;
     display: flex;
-    justify-content: flex-start;*/
+    justify-content: flex-start;
+    
 }
 
 #timeschanged {
@@ -121,19 +124,23 @@ footer {
 }
 
 #sloganbutton {
-    color: #6b705c;
+    background-color: #a5a58d;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
 }
 
 #slogancontainer {
     color: #a5a58d;
-    width: 300px;
+    width: 400px;
     font-weight:bolder;
+    font-size: large;
+    font-size:0.25in;
 }
 
 #timeschanged {
     color: #a5a58d;
     font-weight: bold;
-    
+    width: 150px;
 }
 
 #water-dropdown {

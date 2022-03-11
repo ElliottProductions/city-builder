@@ -66,7 +66,6 @@ function displaySlogans(){
 
         sloganContainer.append(pTag);
     }
-    console.log(sloganArr);
 
 }
 
