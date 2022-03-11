@@ -19,25 +19,25 @@ let cityChanges = 0;
 let forestChanges = 0;
 let sloganArr = [];
 
-displayChange();
+displayCountStats();
 // set event listeners 
 
 waterDropD.addEventListener('change', () => {
     waterImage.src = `assets/water-${waterDropD.value}.jpg`;
     waterChanges++;
-    displayChange();
+    displayCountStats();
 });
 
 cityDropD.addEventListener('change', () => {
     cityImage.src = `assets/city-${cityDropD.value}.jpg`;
     cityChanges++;
-    displayChange();
+    displayCountStats();
 });
 
 forestDropD.addEventListener('change', () => {
     forestImage.src = `assets/forest-${forestDropD.value}.jpg`;
     forestChanges++;
-    displayChange();
+    displayCountStats();
 });
 
 sloganButton.addEventListener('click', () => {
@@ -59,7 +59,7 @@ function displaySlogans(){
     
 
     for (let slogan of sloganArr){
-        const div = document.createElement('div');
+        const div = document.createElement('p');
 
         div.classList.add('slogan');
         div.textContent = slogan;
@@ -69,7 +69,7 @@ function displaySlogans(){
 
 }
 
-function displayChange(){
+function displayCountStats(){
     changeCounter.textContent = `You've changed the top picture ${waterChanges} times, the middle picture ${cityChanges} times, and the bottom picture ${forestChanges} times.`;
 }
 
