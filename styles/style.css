@@ -32,11 +32,14 @@ body {
 }
 
 main {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    grid: 50%;
 }
 
 section {
@@ -58,10 +61,12 @@ header {
     justify-content: flex-end;
     background-color: var(--color3);
     height: var(--header-height);
-    box-shadow: var(--shadow);
+  
 }
 
-
+h1 {
+    
+}
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
@@ -88,4 +93,8 @@ footer {
     justify-content: flex-end;
     background-color: var(--color3);
     box-shadow: var(--shadow);
+}
+
+.postcardimage {
+    width: 300px;
 }
