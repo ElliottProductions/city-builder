@@ -65,12 +65,12 @@ function displaySlogans(){
         div.textContent = slogan;
 
         sloganContainer.append(div);
-}
+    }
 
 }
 
 function displayChange(){
-    changeCounter.textContent = `You've changed the top picture ${waterChanges} times, the middle picture ${cityChanges} times, and the bottom picture ${forestChanges} times.`
+    changeCounter.textContent = `You've changed the top picture ${waterChanges} times, the middle picture ${cityChanges} times, and the bottom picture ${forestChanges} times.`;
 }
 
   // get user input
