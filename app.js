@@ -18,6 +18,8 @@ let waterChanges = 0;
 let cityChanges = 0;
 let forestChanges = 0;
 let sloganArr = [];
+
+displayChange();
 // set event listeners 
 
 waterDropD.addEventListener('change', () => {

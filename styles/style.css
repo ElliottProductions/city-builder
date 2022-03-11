@@ -2,11 +2,11 @@
 body {
     /* feel free to update these css variables for a quick theme */
     
-    --color1: white;
-    --color2: white;
-    --color3: white;
-    --color4: white;
-    --color5: white;
+    --color1: #a5a58d;
+    --color2: #6b705c;
+    --color3: #a5a58d;
+    --color4: #a5a58d;
+    --color5: #a5a58d;
     
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
         
@@ -32,7 +32,7 @@ body {
 }
 
 main {
-    display: grid;
+    display:grid;
     grid-template-columns: 2fr 2fr 1fr;
     display: flex;
     flex-direction: row;
@@ -43,7 +43,7 @@ main {
 }
 
 section {
-    background-color: var(--color5);
+    background-color: #6b705c;
     max-width: 80%;
     display: flex;
     flex-direction: column;
@@ -53,18 +53,26 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    /*border: solid 2px var(--color1);*/
+
+}
+
+section > div {
+    border: black solid 1px;
 }
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color3);
     height: var(--header-height);
+    
   
 }
 
 h1 {
+    
     
 }
 h2 {
@@ -97,4 +105,16 @@ footer {
 
 .postcardimage {
     width: 300px;
+}
+
+#timeschanged {
+    width:200px;
+}
+
+#sloganbutton {
+    color: #6b705c;
+}
+
+#slogancontainer {
+    color: #6b705c;
 }
