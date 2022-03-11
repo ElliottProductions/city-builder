@@ -43,7 +43,7 @@ forestDropD.addEventListener('change', () => {
 sloganButton.addEventListener('click', () => {
     let newSlogan = sloganInput.value;
     
-    sloganArr = [];
+    //sloganArr = [];
 
     sloganArr.push(`${newSlogan}`);
     
@@ -56,16 +56,17 @@ sloganButton.addEventListener('click', () => {
 
 function displaySlogans(){
 
-    
+    sloganContainer.innerHTML = '';
 
     for (let slogan of sloganArr){
-        const div = document.createElement('p');
+        const pTag = document.createElement('p');
 
-        div.classList.add('slogan');
-        div.textContent = slogan;
+        pTag.classList.add('slogan');
+        pTag.textContent = slogan;
 
-        sloganContainer.append(div);
+        sloganContainer.append(pTag);
     }
+    console.log(sloganArr);
 
 }
 
