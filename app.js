@@ -16,12 +16,46 @@ const forestDropD = document.getElementById('forest-dropdown');
 
 const changeCounter = document.getElementById('timeschanged');
 
+const waterArr = [{ display: 'Harbor', value: '1' }, { display: 'Friendly Wildlife', value: '2' }, { display: 'Catching a Wave', value: '3' }];
+const cityArr = [{ display: 'Island Town', value: '1' }, { display: 'Castle 64', value: '2' }, { display: 'Hilltop Castle', value: '3' }];
+const forestArr = [{ display: 'Forest Walkway', value: '1' }, { display: 'Treetop Treasures', value: '2' }, { display: 'Forest Clearing', value: '3' }];
+
 // let state
 let waterChanges = 0;
 let cityChanges = 0;
 let forestChanges = 0;
 let sloganArr = [];
 let cityNameVar = 'Genericsburg';
+
+for (let dropD of waterArr){
+    const option = document.createElement('option');
+
+    option.classList.add('dropD');
+    option.textContent = dropD.display;
+    option.value = dropD.value;
+
+    waterDropD.append(option);
+}
+
+for (let dropD of cityArr){
+    const option = document.createElement('option');
+
+    option.classList.add('dropD');
+    option.textContent = dropD.display;
+    option.value = dropD.value;
+
+    cityDropD.append(option);
+}
+
+for (let dropD of forestArr){
+    const option = document.createElement('option');
+
+    option.classList.add('dropD');
+    option.textContent = dropD.display;
+    option.value = dropD.value;
+
+    forestDropD.append(option);
+}
 
 cityName.textContent = `Choose your own Vacation Adventure in ${cityNameVar}...`;
 
