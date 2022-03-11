@@ -129,6 +129,12 @@ footer {
     font-size: 15px;
 }
 
+#citybutton {
+    background-color: #a5a58d;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+}
+
 #slogancontainer {
     color: #a5a58d;
     width: 400px;

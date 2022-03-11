@@ -7,6 +7,9 @@ const sloganInput = document.getElementById('putsloganshere');
 const sloganButton = document.getElementById('sloganbutton');
 const sloganContainer = document.getElementById('slogancontainer');
 
+const cityButton = document.getElementById('citybutton');
+const cityName = document.getElementById('cityname');
+
 const waterDropD = document.getElementById('water-dropdown');
 const cityDropD = document.getElementById('city-dropdown');
 const forestDropD = document.getElementById('forest-dropdown');
@@ -18,6 +21,9 @@ let waterChanges = 0;
 let cityChanges = 0;
 let forestChanges = 0;
 let sloganArr = [];
+let cityNameVar = 'Genericsburg';
+
+cityName.textContent = `Choose your own Vacation Adventure in ${cityNameVar}...`;
 
 displayCountStats();
 // set event listeners 
@@ -41,18 +47,40 @@ forestDropD.addEventListener('change', () => {
 });
 
 sloganButton.addEventListener('click', () => {
-    let newSlogan = sloganInput.value;
-    
-    //sloganArr = [];
+    if (sloganInput.value === ''){
+        alert('Type Something!');
+            
+    } else {
+        let newSlogan = sloganInput.value;
 
-    sloganArr.push(`${newSlogan}`);
+        sloganArr.push(`${newSlogan}`);
     
-    sloganInput.value = '';
+        sloganInput.value = '';
 
-    displaySlogans();
+        displaySlogans();
+
+    }
+    
 
 
 });
+
+cityButton.addEventListener('click', () => {
+    if (sloganInput.value === ''){
+        alert('Type Something!');
+            
+    } else {
+        cityNameVar = sloganInput.value;
+    
+        cityName.textContent = `Choose your own Vacation Adventure in ${cityNameVar}...`;
+    
+        sloganInput.value = '';
+    }
+
+
+});
+
+
 
 function displaySlogans(){
 
@@ -62,7 +90,7 @@ function displaySlogans(){
         const pTag = document.createElement('p');
 
         pTag.classList.add('slogan');
-        pTag.textContent = slogan;
+        pTag.textContent = `${cityNameVar}: ${slogan}`;
 
         sloganContainer.append(pTag);
     }
