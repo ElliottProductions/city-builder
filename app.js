@@ -28,7 +28,7 @@ let waterChanges = 0;
 let cityChanges = 0;
 let forestChanges = 0;
 let sloganArr = [];
-let cityNameVar = 'Genericsburg';
+let cityNameVar = '';
 
 for (let dropD of waterArr){
     const option = document.createElement('option');
@@ -60,7 +60,7 @@ for (let dropD of forestArr){
     forestDropD.append(option);
 }
 
-cityName.textContent = `Choose your own Vacation Adventure in ${cityNameVar}...`;
+//cityName.textContent = `Choose your own Vacation Adventure in ${cityNameVar}...`;
 
 displayCountStats();
 // set event listeners 
@@ -148,7 +148,12 @@ function displaySlogans(){
         const pTag = document.createElement('p');
 
         pTag.classList.add('slogan');
-        pTag.textContent = `${cityNameVar}: ${slogan}`;
+        if(cityNameVar === ''){
+            pTag.textContent = `${slogan}`;
+        } else {
+            pTag.textContent = `${cityNameVar}: ${slogan}`;
+        }
+        
 
         sloganContainer.append(pTag);
     }
