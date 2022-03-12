@@ -118,6 +118,12 @@ footer {
     
 }
 
+.radiobuttons {
+    display: flex;
+    flex-direction: row;
+
+}
+
 #timeschanged {
     width:200px;
     margin: 2ch;
@@ -170,3 +176,4 @@ footer {
     font-size: 15px;
     width: 150px;
 }
+

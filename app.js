@@ -20,12 +20,17 @@ const waterArr = [{ display: 'Harbor', value: '1' }, { display: 'Friendly Wildli
 const cityArr = [{ display: 'Island Town', value: '1' }, { display: 'Castle 64', value: '2' }, { display: 'Hilltop Castle', value: '3' }];
 const forestArr = [{ display: 'Forest Walkway', value: '1' }, { display: 'Treetop Treasures', value: '2' }, { display: 'Forest Clearing', value: '3' }];
 
+const dayButton = document.getElementById('daymode');
+const nightButton = document.getElementById('nightmode');
+
 // let state
 let waterChanges = 0;
 let cityChanges = 0;
 let forestChanges = 0;
 let sloganArr = [];
 let cityNameVar = 'Genericsburg';
+let dayMode = 1;
+let nightMode = 0;
 
 for (let dropD of waterArr){
     const option = document.createElement('option');
@@ -66,18 +71,21 @@ waterDropD.addEventListener('change', () => {
     waterImage.src = `assets/water-${waterDropD.value}.jpg`;
     waterChanges++;
     displayCountStats();
+    updateMode();
 });
 
 cityDropD.addEventListener('change', () => {
     cityImage.src = `assets/city-${cityDropD.value}.jpg`;
     cityChanges++;
     displayCountStats();
+    updateMode();
 });
 
 forestDropD.addEventListener('change', () => {
     forestImage.src = `assets/forest-${forestDropD.value}.jpg`;
     forestChanges++;
     displayCountStats();
+    updateMode();
 });
 
 sloganButton.addEventListener('click', () => {
@@ -114,12 +122,33 @@ cityButton.addEventListener('click', () => {
 
 });
 
-function logSubmit(event) {
-    sloganontainer.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
-    event.preventDefault();
+dayButton.addEventListener('change',function(e){
+    if (dayButton.checked) {
+        dayMode = 1;
+        nightMode = 0;
+    }
+    updateMode();
+});
+
+nightButton.addEventListener('change',function(e){
+    if (nightButton.checked) {
+        dayMode = 0;
+        nightMode = 1;
+    }
+    updateMode();
+});
+
+function updateMode(){
+    if(nightMode === 1){
+        waterImage.src = `assets/water-${waterDropD.value}N.jpg`;
+        cityImage.src = `assets/city-${cityDropD.value}N.jpg`;
+        forestImage.src = `assets/forest-${forestDropD.value}N.jpg`;
+    }else{
+        waterImage.src = `assets/water-${waterDropD.value}.jpg`;
+        cityImage.src = `assets/city-${cityDropD.value}.jpg`;
+        forestImage.src = `assets/forest-${forestDropD.value}.jpg`;
+    }
 }
-
-
 
 function displaySlogans(){
 
