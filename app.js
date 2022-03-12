@@ -125,22 +125,22 @@ cityButton.addEventListener('click', () => {
 
 });
 
-dayButton.addEventListener('change',function(e){
+dayButton.addEventListener('change', function(){
     updateMode();
 });
 
-nightButton.addEventListener('change',function(e){
+nightButton.addEventListener('change', function(){
     updateMode();
 });
 
 function updateMode(){
-    if(nightButton.checked){
+    if (nightButton.checked){
         waterImage.src = `assets/water-${waterDropD.value}N.jpg`;
         cityImage.src = `assets/city-${cityDropD.value}N.jpg`;
         forestImage.src = `assets/forest-${forestDropD.value}N.jpg`;
         audio.play();
         audio2.pause();
-    }else{
+    } else {
         waterImage.src = `assets/water-${waterDropD.value}.jpg`;
         cityImage.src = `assets/city-${cityDropD.value}.jpg`;
         forestImage.src = `assets/forest-${forestDropD.value}.jpg`;
@@ -157,7 +157,7 @@ function displaySlogans(){
         const pTag = document.createElement('p');
 
         pTag.classList.add('slogan');
-        if(cityNameVar === ''){
+        if (cityNameVar === ''){
             pTag.textContent = `${slogan}`;
         } else {
             pTag.textContent = `${cityNameVar}: ${slogan}`;
