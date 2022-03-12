@@ -23,12 +23,17 @@ const forestArr = [{ display: 'Forest Walkway', value: '1' }, { display: 'Treeto
 const dayButton = document.getElementById('daymode');
 const nightButton = document.getElementById('nightmode');
 
+var audio = new Audio('assets/nighttime.mp3');
+var audio2 = new Audio('assets/daytime.mp3');
+
 // let state
 let waterChanges = 0;
 let cityChanges = 0;
 let forestChanges = 0;
 let sloganArr = [];
 let cityNameVar = '';
+
+audio2.play();
 
 for (let dropD of waterArr){
     const option = document.createElement('option');
@@ -133,10 +138,14 @@ function updateMode(){
         waterImage.src = `assets/water-${waterDropD.value}N.jpg`;
         cityImage.src = `assets/city-${cityDropD.value}N.jpg`;
         forestImage.src = `assets/forest-${forestDropD.value}N.jpg`;
+        audio.play();
+        audio2.pause();
     }else{
         waterImage.src = `assets/water-${waterDropD.value}.jpg`;
         cityImage.src = `assets/city-${cityDropD.value}.jpg`;
         forestImage.src = `assets/forest-${forestDropD.value}.jpg`;
+        audio.pause();
+        audio2.play();
     }
 }
 
