@@ -29,8 +29,6 @@ let cityChanges = 0;
 let forestChanges = 0;
 let sloganArr = [];
 let cityNameVar = 'Genericsburg';
-let dayMode = 1;
-let nightMode = 0;
 
 for (let dropD of waterArr){
     const option = document.createElement('option');
@@ -123,23 +121,15 @@ cityButton.addEventListener('click', () => {
 });
 
 dayButton.addEventListener('change',function(e){
-    if (dayButton.checked) {
-        dayMode = 1;
-        nightMode = 0;
-    }
     updateMode();
 });
 
 nightButton.addEventListener('change',function(e){
-    if (nightButton.checked) {
-        dayMode = 0;
-        nightMode = 1;
-    }
     updateMode();
 });
 
 function updateMode(){
-    if(nightMode === 1){
+    if(nightButton.checked){
         waterImage.src = `assets/water-${waterDropD.value}N.jpg`;
         cityImage.src = `assets/city-${cityDropD.value}N.jpg`;
         forestImage.src = `assets/forest-${forestDropD.value}N.jpg`;
